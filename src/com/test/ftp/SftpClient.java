@@ -26,6 +26,7 @@ public class SftpClient {
 
     private static ChannelSftp setupJsch(String host, String username, String password) throws JSchException {
         JSch jsch = new JSch();
+        jsch.setKnownHosts("./known_hosts");
         Session jschSession = jsch.getSession(username, host);
         jschSession.setPassword(password);
         jschSession.connect();
