@@ -25,10 +25,10 @@ public class FtpClient {
 
             System.out.println("Sending file: " + args[4]);
             if(!ftpClient.storeFile(args[5], targetStream)) {
-                System.out.println("File sent");
-                System.out.println("Reply: " + ftpClient.getReply());
+                System.out.println("File not sent");
                 System.out.println("Code: " + ftpClient.getReplyCode());
                 System.out.println("Reply text: " + ftpClient.getReplyString());
+                System.out.println("Reply: " + ftpClient.getReply());
             }
         } catch (IOException e) {
             e.printStackTrace();
