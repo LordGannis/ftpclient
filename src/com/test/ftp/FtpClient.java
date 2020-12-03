@@ -17,6 +17,9 @@ public class FtpClient {
 
             ftpClient.connect(args[0], Integer.parseInt(args[1]));
             System.out.println("Connected successfully to " + (args[0].concat(":").concat(args[1])));
+            ftpClient.setUseEPSVwithIPv4(true);
+            ftpClient.enterLocalPassiveMode();
+            System.out.println("Entered EPSV");
             boolean login = ftpClient.login(args[2], args[3]);
             System.out.println("Login successfully: " + login);
 
